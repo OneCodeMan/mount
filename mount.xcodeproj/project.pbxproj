@@ -13,6 +13,8 @@
 		16FAE5091FF58C7400685642 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16FAE5081FF58C7400685642 /* Assets.xcassets */; };
 		16FAE50C1FF58C7400685642 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16FAE50A1FF58C7400685642 /* LaunchScreen.storyboard */; };
 		16FAE5141FF58F5B00685642 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16FAE5131FF58F5B00685642 /* GoogleService-Info.plist */; };
+		16FAE51A1FF5977700685642 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16FAE5191FF5977600685642 /* Default-568h@2x.png */; };
+		16FAE51C1FF5979B00685642 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAE51B1FF5979B00685642 /* Entry.swift */; };
 		4AE96B4F8222C8DDF99D6E57 /* Pods_mount.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F2338BDBA53A0DAD25EEEAD /* Pods_mount.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +28,8 @@
 		16FAE50B1FF58C7400685642 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16FAE50D1FF58C7400685642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16FAE5131FF58F5B00685642 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		16FAE5191FF5977600685642 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		16FAE51B1FF5979B00685642 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		5F8C630B748CA7F35D10EA30 /* Pods-mount.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mount.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mount/Pods-mount.debug.xcconfig"; sourceTree = "<group>"; };
 		9BF018F340AC0C73E196B212 /* Pods-mount.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mount.release.xcconfig"; path = "Pods/Target Support Files/Pods-mount/Pods-mount.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,12 +80,7 @@
 				16FAE5171FF596CA00685642 /* View */,
 				16FAE5161FF596C600685642 /* Model */,
 				16FAE5151FF596B500685642 /* Supporting Files */,
-				16FAE5031FF58C7300685642 /* ViewController.swift */,
-				16FAE5051FF58C7400685642 /* Main.storyboard */,
 				16FAE5081FF58C7400685642 /* Assets.xcassets */,
-				16FAE50A1FF58C7400685642 /* LaunchScreen.storyboard */,
-				16FAE50D1FF58C7400685642 /* Info.plist */,
-				16FAE5131FF58F5B00685642 /* GoogleService-Info.plist */,
 			);
 			path = mount;
 			sourceTree = "<group>";
@@ -89,7 +88,9 @@
 		16FAE5151FF596B500685642 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				16FAE5011FF58C7300685642 /* AppDelegate.swift */,
+				16FAE5191FF5977600685642 /* Default-568h@2x.png */,
+				16FAE50D1FF58C7400685642 /* Info.plist */,
+				16FAE5131FF58F5B00685642 /* GoogleService-Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -97,6 +98,7 @@
 		16FAE5161FF596C600685642 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				16FAE51B1FF5979B00685642 /* Entry.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -104,6 +106,8 @@
 		16FAE5171FF596CA00685642 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				16FAE5051FF58C7400685642 /* Main.storyboard */,
+				16FAE50A1FF58C7400685642 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -111,6 +115,8 @@
 		16FAE5181FF596CD00685642 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				16FAE5011FF58C7300685642 /* AppDelegate.swift */,
+				16FAE5031FF58C7300685642 /* ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -188,6 +194,7 @@
 				16FAE50C1FF58C7400685642 /* LaunchScreen.storyboard in Resources */,
 				16FAE5141FF58F5B00685642 /* GoogleService-Info.plist in Resources */,
 				16FAE5091FF58C7400685642 /* Assets.xcassets in Resources */,
+				16FAE51A1FF5977700685642 /* Default-568h@2x.png in Resources */,
 				16FAE5071FF58C7400685642 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16FAE51C1FF5979B00685642 /* Entry.swift in Sources */,
 				16FAE5041FF58C7300685642 /* ViewController.swift in Sources */,
 				16FAE5021FF58C7300685642 /* AppDelegate.swift in Sources */,
 			);
