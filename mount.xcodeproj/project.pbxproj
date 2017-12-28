@@ -76,6 +76,8 @@
 		16FAE5001FF58C7300685642 /* mount */ = {
 			isa = PBXGroup;
 			children = (
+				16FAE50D1FF58C7400685642 /* Info.plist */,
+				16FAE5131FF58F5B00685642 /* GoogleService-Info.plist */,
 				16FAE5181FF596CD00685642 /* Controller */,
 				16FAE5171FF596CA00685642 /* View */,
 				16FAE5161FF596C600685642 /* Model */,
@@ -89,8 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				16FAE5191FF5977600685642 /* Default-568h@2x.png */,
-				16FAE50D1FF58C7400685642 /* Info.plist */,
-				16FAE5131FF58F5B00685642 /* GoogleService-Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
