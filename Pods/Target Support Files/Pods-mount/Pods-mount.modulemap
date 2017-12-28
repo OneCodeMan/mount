@@ -1,0 +1,6 @@
+framework module Pods_mount {
+  umbrella header "Pods-mount-umbrella.h"
+
+  export *
+  module * { export * }
+}
