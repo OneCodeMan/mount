@@ -24,9 +24,11 @@ class AddEntryViewController: UIViewController {
     @IBAction func addEntry(_ sender: Any) {
         
         let entriesDB = Database.database().reference().child("Entries")
+        let titleText = titleTextField.text ?? ""
         let entryText = contentTextField.text ?? ""
         
         let entryDictionary = ["Sender": Auth.auth().currentUser?.email,
+                               "EntryTitle": titleText,
                                "EntryBody": entryText]
         
         entriesDB.childByAutoId().setValue(entryDictionary) {

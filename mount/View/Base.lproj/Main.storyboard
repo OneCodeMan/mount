@@ -132,34 +132,11 @@
                                     <action selector="logoutPressed:" destination="0Oi-FN-T2O" eventType="touchUpInside" id="9Hb-JY-mEh"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sys-1S-fKU">
-                                <rect key="frame" x="0.0" y="548" width="290" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="290" id="56r-AR-LWo"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCt-2h-vhG">
-                                <rect key="frame" x="286" y="528" width="89" height="50"/>
-                                <color key="backgroundColor" red="0.87594288793103448" green="0.87594288793103448" blue="0.87594288793103448" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="89" id="Adu-br-z6V"/>
-                                    <constraint firstAttribute="height" constant="50" id="RRz-Cc-GUb"/>
-                                </constraints>
-                                <state key="normal" title="Send">
-                                    <color key="titleColor" red="0.016298491379310387" green="0.016298491379310387" blue="0.016298491379310387" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="sendPressed:" destination="0Oi-FN-T2O" eventType="touchUpInside" id="nIn-so-qBA"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rp0-t5-Mu8">
-                                <rect key="frame" x="0.0" y="20" width="375" height="460"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="490"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="460" id="R5Y-nB-Xbc"/>
+                                    <constraint firstAttribute="height" constant="490" id="R5Y-nB-Xbc"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryCell" id="Xel-l4-Rr7">
@@ -175,15 +152,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="TCt-2h-vhG" firstAttribute="trailing" secondItem="004-DI-GNF" secondAttribute="trailing" id="A73-6I-Y0l"/>
-                            <constraint firstItem="TCt-2h-vhG" firstAttribute="leading" secondItem="Sys-1S-fKU" secondAttribute="trailing" constant="-4" id="AAe-6D-F6S"/>
                             <constraint firstItem="rp0-t5-Mu8" firstAttribute="leading" secondItem="004-DI-GNF" secondAttribute="leading" id="FLn-XY-4rB"/>
                             <constraint firstItem="004-DI-GNF" firstAttribute="trailing" secondItem="3m0-Gc-E6r" secondAttribute="trailing" id="K1W-xk-aHq"/>
                             <constraint firstItem="3m0-Gc-E6r" firstAttribute="bottom" secondItem="004-DI-GNF" secondAttribute="bottom" id="KnM-IO-Rl5"/>
                             <constraint firstItem="rp0-t5-Mu8" firstAttribute="top" secondItem="004-DI-GNF" secondAttribute="top" id="PU7-sB-wb2"/>
-                            <constraint firstItem="3m0-Gc-E6r" firstAttribute="top" secondItem="TCt-2h-vhG" secondAttribute="bottom" constant="-1" id="aP8-gc-Hw2"/>
                             <constraint firstAttribute="trailing" secondItem="rp0-t5-Mu8" secondAttribute="trailing" id="dcy-Up-yCg"/>
-                            <constraint firstItem="3m0-Gc-E6r" firstAttribute="top" secondItem="Sys-1S-fKU" secondAttribute="bottom" constant="-1" id="jEx-Fh-NkT"/>
                             <constraint firstItem="3m0-Gc-E6r" firstAttribute="leading" secondItem="004-DI-GNF" secondAttribute="leading" id="s1v-rH-blh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="004-DI-GNF"/>
@@ -197,8 +170,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="entryTableView" destination="rp0-t5-Mu8" id="mlL-cu-ZGq"/>
-                        <outlet property="entryTextField" destination="Sys-1S-fKU" id="tdr-lV-g44"/>
-                        <outlet property="sendButton" destination="TCt-2h-vhG" id="2yj-GC-9Rb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="azR-l1-s4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -231,13 +202,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8WK-xj-mRU">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Rockin' open mics" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8WK-xj-mRU">
                                 <rect key="frame" x="15" y="139" width="345" height="230"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="230" id="s6x-ZD-6q3"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -355,7 +325,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="U3p-H4-mqK"/>
         <segue reference="Fug-RJ-05c"/>
     </inferredMetricsTieBreakers>
 </document>

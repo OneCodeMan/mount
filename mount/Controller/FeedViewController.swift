@@ -16,9 +16,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var entryTableView: UITableView!
     
-    @IBOutlet weak var entryTextField: UITextField!
-    @IBOutlet weak var sendButton: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,38 +34,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = entryTableView.dequeueReusableCell(withIdentifier: "EntryCell", for: indexPath)
         
-        cell.textLabel?.text = entryArray[indexPath.row].content
+        cell.textLabel?.text = entryArray[indexPath.row].title
         
         return cell
-    }
-    
-    @IBAction func sendPressed(_ sender: Any) {
-        
-        entryTextField.endEditing(true)
-        
-        entryTextField.isEnabled = false
-        sendButton.isEnabled = false
-        
-        let entriesDB = Database.database().reference().child("Entries")
-        let entryText = entryTextField.text ?? ""
-        
-        let entryDictionary = ["Sender": Auth.auth().currentUser?.email,
-                               "EntryBody": entryText]
-        
-        entriesDB.childByAutoId().setValue(entryDictionary) {
-            (error, reference) in
-            
-            if error != nil {
-                print(error)
-            } else {
-                print("entry saved")
-                
-                self.entryTextField.isEnabled = true
-                self.sendButton.isEnabled = true
-                self.entryTextField.text = ""
-            }
-        }
-        
     }
     
     func fetchEntries() {
@@ -79,12 +47,14 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             let snapshotValue = snapshot.value as! Dictionary<String, String>
             
-            let content = snapshotValue["EntryBody"]!
             let sender = snapshotValue["Sender"]!
+            let title = snapshotValue["EntryTitle"]!
+            let content = snapshotValue["EntryBody"]!
             
             let entry = Entry()
-            entry.content = content
             entry.sender = sender
+            entry.title = title
+            entry.content = content
             
             self.entryArray.append(entry)
             self.entryTableView.reloadData()
