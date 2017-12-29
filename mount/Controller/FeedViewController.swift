@@ -8,19 +8,92 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
-class FeedViewController: UIViewController {
-
+class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var entryArray: [Entry] = [Entry]()
+    
+    @IBOutlet weak var entryTableView: UITableView!
+    
+    @IBOutlet weak var entryTextField: UITextField!
+    @IBOutlet weak var sendButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        entryTableView.delegate = self
+        entryTableView.dataSource = self
+        
+        fetchEntries()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    // Mark: - TableView DataSource methods
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return entryArray.count
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = entryTableView.dequeueReusableCell(withIdentifier: "EntryCell", for: indexPath)
+        
+        cell.textLabel?.text = entryArray[indexPath.row].content
+        
+        return cell
+    }
+    
+    @IBAction func sendPressed(_ sender: Any) {
+        
+        entryTextField.endEditing(true)
+        
+        entryTextField.isEnabled = false
+        sendButton.isEnabled = false
+        
+        let entriesDB = Database.database().reference().child("Entries")
+        let entryText = entryTextField.text ?? ""
+        
+        let entryDictionary = ["Sender": Auth.auth().currentUser?.email,
+                               "EntryBody": entryText]
+        
+        entriesDB.childByAutoId().setValue(entryDictionary) {
+            (error, reference) in
+            
+            if error != nil {
+                print(error)
+            } else {
+                print("entry saved")
+                
+                self.entryTextField.isEnabled = true
+                self.sendButton.isEnabled = true
+                self.entryTextField.text = ""
+            }
+        }
+        
+    }
+    
+    func fetchEntries() {
+        
+        let entriesDB = Database.database().reference().child("Entries")
+        
+        entriesDB.observe(.childAdded) { (snapshot) in
+            
+            let snapshotValue = snapshot.value as! Dictionary<String, String>
+            
+            let content = snapshotValue["EntryBody"]!
+            let sender = snapshotValue["Sender"]!
+            
+            let entry = Entry()
+            entry.content = content
+            entry.sender = sender
+            
+            self.entryArray.append(entry)
+            self.entryTableView.reloadData()
+            
+            
+        }
+        
+    }
+    
     
     @IBAction func logoutPressed(_ sender: Any) {
        
