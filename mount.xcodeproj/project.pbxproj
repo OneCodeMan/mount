@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1666BFCE1FF5CD4D005C3EA8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1666BFCD1FF5CD4D005C3EA8 /* LoginViewController.swift */; };
+		1666BFD01FF5CD57005C3EA8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1666BFCF1FF5CD57005C3EA8 /* RegisterViewController.swift */; };
 		16FAE5021FF58C7300685642 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAE5011FF58C7300685642 /* AppDelegate.swift */; };
 		16FAE5041FF58C7300685642 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAE5031FF58C7300685642 /* ViewController.swift */; };
 		16FAE5071FF58C7400685642 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16FAE5051FF58C7400685642 /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		0F2338BDBA53A0DAD25EEEAD /* Pods_mount.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mount.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1666BFCD1FF5CD4D005C3EA8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1666BFCF1FF5CD57005C3EA8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		16FAE4FE1FF58C7300685642 /* mount.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mount.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16FAE5011FF58C7300685642 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16FAE5031FF58C7300685642 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 			children = (
 				16FAE5011FF58C7300685642 /* AppDelegate.swift */,
 				16FAE5031FF58C7300685642 /* ViewController.swift */,
+				1666BFCD1FF5CD4D005C3EA8 /* LoginViewController.swift */,
+				1666BFCF1FF5CD57005C3EA8 /* RegisterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -254,6 +260,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1666BFCE1FF5CD4D005C3EA8 /* LoginViewController.swift in Sources */,
+				1666BFD01FF5CD57005C3EA8 /* RegisterViewController.swift in Sources */,
 				16FAE51C1FF5979B00685642 /* Entry.swift in Sources */,
 				16FAE5041FF58C7300685642 /* ViewController.swift in Sources */,
 				16FAE5021FF58C7300685642 /* AppDelegate.swift in Sources */,
