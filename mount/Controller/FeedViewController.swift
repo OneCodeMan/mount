@@ -30,6 +30,11 @@ class FeedViewController: UIViewController {
         } catch {
             print("error, problem signing out")
         }
+        
+        guard (navigationController?.popToRootViewController(animated: true)) != nil else {
+            print("No view controllers to pop off")
+            return
+        }
     }
     
     /*

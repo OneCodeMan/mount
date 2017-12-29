@@ -22,11 +22,14 @@ class RegisterViewController: UIViewController {
 
     @IBAction func registerPressed(_ sender: Any) {
         
-        Auth.auth().createUser(withEmail: usernameTextField.text!, password: passwordTextField.text!) {
+        let userName = usernameTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        
+        Auth.auth().createUser(withEmail: userName, password: password) {
             (user, error) in
             
             if error != nil {
-                print(error)
+                print(error!)
             } else {
                 print("Registration complete")
                 
