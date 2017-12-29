@@ -170,11 +170,60 @@
                     </navigationItem>
                     <connections>
                         <outlet property="entryTableView" destination="rp0-t5-Mu8" id="mlL-cu-ZGq"/>
+                        <segue destination="BaP-jT-kGF" kind="showDetail" identifier="goToEntryDetail" id="h4j-Lu-2rl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="azR-l1-s4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2389.5999999999999" y="145.27736131934034"/>
+        </scene>
+        <!--Entry Detail-->
+        <scene sceneID="cWq-Nq-n0b">
+            <objects>
+                <viewController storyboardIdentifier="EntryDetail" title="Entry Detail" id="BaP-jT-kGF" customClass="EntryDetailViewController" customModule="mount" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wrS-iG-a8t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entry Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xl2-Kl-u2r">
+                                <rect key="frame" x="20" y="60" width="153" height="37"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAx-Fg-Lo4">
+                                <rect key="frame" x="20" y="111" width="31" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5G-ha-Ekq">
+                                <rect key="frame" x="20" y="157" width="61.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="l5G-ha-Ekq" firstAttribute="top" secondItem="XAx-Fg-Lo4" secondAttribute="bottom" constant="29" id="Bwc-JN-Pyy"/>
+                            <constraint firstItem="l5G-ha-Ekq" firstAttribute="leading" secondItem="Xl2-Kl-u2r" secondAttribute="leading" id="C9H-LD-jk3"/>
+                            <constraint firstItem="Xl2-Kl-u2r" firstAttribute="leading" secondItem="AT3-EJ-9vR" secondAttribute="leading" constant="20" id="ErB-EX-Met"/>
+                            <constraint firstItem="Xl2-Kl-u2r" firstAttribute="top" secondItem="AT3-EJ-9vR" secondAttribute="top" constant="40" id="kyD-4j-ObR"/>
+                            <constraint firstItem="XAx-Fg-Lo4" firstAttribute="leading" secondItem="Xl2-Kl-u2r" secondAttribute="leading" id="lLa-7w-f9y"/>
+                            <constraint firstItem="XAx-Fg-Lo4" firstAttribute="top" secondItem="Xl2-Kl-u2r" secondAttribute="bottom" constant="14" id="z16-gP-g6x"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AT3-EJ-9vR"/>
+                    </view>
+                    <connections>
+                        <outlet property="entryContent" destination="l5G-ha-Ekq" id="Koh-37-Uhr"/>
+                        <outlet property="entryDate" destination="XAx-Fg-Lo4" id="yTv-9t-pr1"/>
+                        <outlet property="entryTitle" destination="Xl2-Kl-u2r" id="9F8-Lv-wtF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ca3-3i-T7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3397.5999999999999" y="527.58620689655174"/>
         </scene>
         <!--Add Entry-->
         <scene sceneID="4zE-n0-Utg">
@@ -256,7 +305,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oK9-hO-7cu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3348" y="126.38680659670166"/>
+            <point key="canvasLocation" x="3601" y="-207"/>
         </scene>
         <!--Login-->
         <scene sceneID="fFJ-hI-2gd">

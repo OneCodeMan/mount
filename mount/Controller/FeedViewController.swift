@@ -39,6 +39,15 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "EntryDetail") as? EntryDetailViewController {
+            vc.titleString = entryArray[indexPath.row].title
+            vc.content = entryArray[indexPath.row].content
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     func fetchEntries() {
         
         let entriesDB = Database.database().reference().child("Entries")
@@ -58,8 +67,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             self.entryArray.append(entry)
             self.entryTableView.reloadData()
-            
-            
+
         }
         
     }
