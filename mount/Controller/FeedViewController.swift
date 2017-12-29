@@ -49,6 +49,15 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            entryArray.remove(at: indexPath.row)
+            entryTableView.deleteRows(at: [indexPath], with: .fade)
+            
+            
+        }
+    }
+    
     func fetchEntries() {
         
         let entriesDB = Database.database().reference().child("Entries")
