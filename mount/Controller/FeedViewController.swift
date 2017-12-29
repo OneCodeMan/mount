@@ -1,5 +1,5 @@
 //
-//  RegisterViewController.swift
+//  FeedViewController.swift
 //  mount
 //
 //  Created by Dave Gumba on 2017-12-28.
@@ -9,33 +9,29 @@
 import UIKit
 import FirebaseAuth
 
-class RegisterViewController: UIViewController {
+class FeedViewController: UIViewController {
 
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func registerPressed(_ sender: Any) {
-        
-        Auth.auth().createUser(withEmail: usernameTextField.text!, password: passwordTextField.text!) {
-            (user, error) in
-            
-            if error != nil {
-                print(error)
-            } else {
-                print("Registration complete")
-                
-                self.performSegue(withIdentifier: "goToFeed", sender: self)
-            }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func logoutPressed(_ sender: Any) {
+       
+        do {
+            try Auth.auth().signOut()
+            navigationController?.popToRootViewController(animated: true)
+        } catch {
+            print("error, problem signing out")
         }
     }
     
-
     /*
     // MARK: - Navigation
 

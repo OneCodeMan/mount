@@ -95,7 +95,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -104,6 +104,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="Rmv-Gv-jU5" id="1pT-pJ-Wgl"/>
                         <outlet property="usernameTextField" destination="zI6-BS-vaj" id="S6y-Td-M7k"/>
+                        <segue destination="0Oi-FN-T2O" kind="show" identifier="goToFeed" id="7MS-fo-bIq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkN-ni-ps5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -113,10 +114,23 @@
         <!--Feed-->
         <scene sceneID="K3f-KA-2j1">
             <objects>
-                <viewController title="Feed" id="0Oi-FN-T2O" sceneMemberID="viewController">
+                <viewController title="Feed" id="0Oi-FN-T2O" customClass="FeedViewController" customModule="mount" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EjM-Fm-oT7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3m0-Gc-E6r">
+                                <rect key="frame" x="112" y="477" width="150" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutPressed:" destination="0Oi-FN-T2O" eventType="touchUpInside" id="9Hb-JY-mEh"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="004-DI-GNF"/>
                     </view>
@@ -156,7 +170,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -190,4 +204,7 @@
             <point key="canvasLocation" x="-255" y="116"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="7MS-fo-bIq"/>
+    </inferredMetricsTieBreakers>
 </document>
