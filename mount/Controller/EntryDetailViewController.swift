@@ -12,7 +12,7 @@ class EntryDetailViewController: UIViewController {
     
     var titleString: String?
     var content: String?
-    // date
+    var date: String?
     
     @IBOutlet weak var entryTitle: UILabel!
     @IBOutlet weak var entryDate: UILabel!
@@ -23,6 +23,7 @@ class EntryDetailViewController: UIViewController {
 
         entryTitle.text = titleString ?? "no title available"
         entryContent.text = content ?? "no content available"
+        entryDate.text = date ?? "no date"
     }
 
     /*

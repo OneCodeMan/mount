@@ -27,8 +27,17 @@ class AddEntryViewController: UIViewController {
         let titleText = titleTextField.text ?? ""
         let entryText = contentTextField.text ?? ""
         
+        let date = Date()
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
+        let entryDate = "\(month)/\(day)/\(year)"
+        
+        
         let entryDictionary = ["Sender": Auth.auth().currentUser?.email,
                                "EntryTitle": titleText,
+                               "EntryDate": entryDate,
                                "EntryBody": entryText]
         
         entriesDB.childByAutoId().setValue(entryDictionary) {

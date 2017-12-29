@@ -44,6 +44,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         if let vc = storyboard?.instantiateViewController(withIdentifier: "EntryDetail") as? EntryDetailViewController {
             vc.titleString = entryArray[indexPath.row].title
             vc.content = entryArray[indexPath.row].content
+            vc.date = entryArray[indexPath.row].date
             navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -59,10 +60,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             let sender = snapshotValue["Sender"]!
             let title = snapshotValue["EntryTitle"]!
             let content = snapshotValue["EntryBody"]!
+            let date = snapshotValue["EntryDate"]!
             
             let entry = Entry()
             entry.sender = sender
             entry.title = title
+            entry.date = date
             entry.content = content
             
             self.entryArray.append(entry)
@@ -71,7 +74,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
     }
-    
     
     @IBAction func logoutPressed(_ sender: Any) {
        
