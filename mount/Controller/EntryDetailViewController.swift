@@ -7,16 +7,21 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class EntryDetailViewController: UIViewController {
     
     var titleString: String?
     var content: String?
     var date: String?
+    var dbKey: String?
     
     @IBOutlet weak var entryTitle: UILabel!
     @IBOutlet weak var entryDate: UILabel!
     @IBOutlet weak var entryContent: UILabel!
+    
+    var dbURL: DatabaseReference?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,16 +29,23 @@ class EntryDetailViewController: UIViewController {
         entryTitle.text = titleString ?? "no title available"
         entryContent.text = content ?? "no content available"
         entryDate.text = date ?? "no date"
+        
+        let entriesDB = Database.database().reference().child("Entries")
+        
+        dbURL = entriesDB.child(dbKey!)
+        print(dbURL)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func editPressed(_ sender: Any) {
+        
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "EditEntry") as? EditEntryViewController {
+            vc.entryTitle = titleString
+            vc.content = content
+            vc.dbURL = dbURL
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
-    */
+    
 
 }
