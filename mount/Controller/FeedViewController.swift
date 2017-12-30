@@ -46,6 +46,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             vc.titleString = entryArray[indexPath.row].title
             vc.content = entryArray[indexPath.row].content
             vc.date = entryArray[indexPath.row].date
+            vc.dbKey = self.keyArray[indexPath.row]
             navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -93,6 +94,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         }
         
+        getAllKeys()
+        
     }
     
     func getAllKeys() {
@@ -102,7 +105,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let snap = child as! DataSnapshot
                 let key = snap.key
                 self.keyArray.append(key)
-                print(self.keyArray)
                 
             }
         })
