@@ -24,6 +24,7 @@ class AddEntryViewController: UIViewController {
     @IBAction func addEntry(_ sender: Any) {
         
         let entriesDB = Database.database().reference().child("Entries")
+        let entryKey = UUID().uuidString
         let titleText = titleTextField.text ?? ""
         let entryText = contentTextField.text ?? ""
         
@@ -36,6 +37,7 @@ class AddEntryViewController: UIViewController {
         
         
         let entryDictionary = ["Sender": Auth.auth().currentUser?.email,
+                               "EntryKey": entryKey,
                                "EntryTitle": titleText,
                                "EntryDate": entryDate,
                                "EntryBody": entryText]
@@ -46,7 +48,7 @@ class AddEntryViewController: UIViewController {
             if error != nil {
                 print(error)
             } else {
-                print("entry saved")
+                //print("entry saved")
                 
             }
         }

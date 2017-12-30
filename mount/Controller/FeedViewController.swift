@@ -13,6 +13,7 @@ import FirebaseDatabase
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var entryArray: [Entry] = [Entry]()
+    var keyArray: [String] = [String]()
     
     @IBOutlet weak var entryTableView: UITableView!
     
@@ -49,6 +50,23 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let entriesDB = Database.database().reference().child("Entries")
+            
+            getAllKeys()
+            let when = DispatchTime.now() + 1
+            DispatchQueue.main.asyncAfter(deadline: when, execute: {
+                entriesDB.child(self.keyArray[indexPath.row]).removeValue()
+            })
+            
+            entryArray.remove(at: indexPath.row)
+            entryTableView.deleteRows(at: [indexPath], with: .fade)
+        
+
+        }
+    }
+    
     func fetchEntries() {
         
         let entriesDB = Database.database().reference().child("Entries")
@@ -57,12 +75,14 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             let snapshotValue = snapshot.value as! Dictionary<String, String>
             
+            let key = snapshotValue["EntryKey"]!
             let sender = snapshotValue["Sender"]!
             let title = snapshotValue["EntryTitle"]!
             let content = snapshotValue["EntryBody"]!
             let date = snapshotValue["EntryDate"]!
             
             let entry = Entry()
+            entry.key = key
             entry.sender = sender
             entry.title = title
             entry.date = date
@@ -73,6 +93,19 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         }
         
+    }
+    
+    func getAllKeys() {
+        let entriesDB = Database.database().reference().child("Entries")
+        entriesDB.observeSingleEvent(of: .value, with: { (snapshot) in
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                let key = snap.key
+                self.keyArray.append(key)
+                print(self.keyArray)
+                
+            }
+        })
     }
     
     @IBAction func logoutPressed(_ sender: Any) {
