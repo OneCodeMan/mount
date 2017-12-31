@@ -24,6 +24,9 @@ class AddEntryViewController: UIViewController {
     @IBAction func addEntry(_ sender: Any) {
         
         let entriesDB = Database.database().reference().child("Entries")
+        
+        let username = Auth.auth().currentUser?.email
+        
         let entryKey = UUID().uuidString
         let titleText = titleTextField.text ?? ""
         let entryText = contentTextField.text ?? ""
@@ -36,7 +39,7 @@ class AddEntryViewController: UIViewController {
         let entryDate = "\(month)/\(day)/\(year)"
         
         
-        let entryDictionary = ["Sender": Auth.auth().currentUser?.email,
+        let entryDictionary = ["Sender": username,
                                "EntryKey": entryKey,
                                "EntryTitle": titleText,
                                "EntryDate": entryDate,
@@ -48,7 +51,10 @@ class AddEntryViewController: UIViewController {
             if error != nil {
                 print(error)
             } else {
-                //print("entry saved")
+                if let vc = self.storyboard?.instantiateViewController(withIdentifier: "FeedView") as? FeedViewController {
+                    vc.username = username
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
                 
             }
         }

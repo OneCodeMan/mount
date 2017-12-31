@@ -280,7 +280,6 @@
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveEntry:" destination="lry-2I-GOO" eventType="touchUpInside" id="KgD-U7-cQD"/>
-                                    <segue destination="0Oi-FN-T2O" kind="show" id="CxC-f3-JRG"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="We are migratory animals." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="D5x-17-EKf">
@@ -374,7 +373,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="addEntry:" destination="wyX-v6-Wnt" eventType="touchUpInside" id="8rP-0a-f9p"/>
-                                    <segue destination="0Oi-FN-T2O" kind="show" id="Fug-RJ-05c"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -471,7 +469,4 @@
             <point key="canvasLocation" x="-255" y="116"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="b1d-fk-Rwc"/>
-    </inferredMetricsTieBreakers>
 </document>

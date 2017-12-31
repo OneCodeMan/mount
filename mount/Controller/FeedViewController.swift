@@ -24,6 +24,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         entryTableView.delegate = self
         entryTableView.dataSource = self
         
+        print("logged in as \(username)")
         fetchEntries()
     }
     
@@ -70,28 +71,29 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func fetchEntries() {
         
-        // use filter method here
         let entriesDB = Database.database().reference().child("Entries")
         
         entriesDB.observe(.childAdded) { (snapshot) in
             
             let snapshotValue = snapshot.value as! Dictionary<String, String>
-            
-            let key = snapshotValue["EntryKey"]!
             let sender = snapshotValue["Sender"]!
-            let title = snapshotValue["EntryTitle"]!
-            let content = snapshotValue["EntryBody"]!
-            let date = snapshotValue["EntryDate"]!
             
-            let entry = Entry()
-            entry.key = key
-            entry.sender = sender
-            entry.title = title
-            entry.date = date
-            entry.content = content
+            if (sender == self.username!) {
+                let key = snapshotValue["EntryKey"]!
+                let title = snapshotValue["EntryTitle"]!
+                let content = snapshotValue["EntryBody"]!
+                let date = snapshotValue["EntryDate"]!
             
-            self.entryArray.append(entry)
-            self.entryTableView.reloadData()
+                let entry = Entry()
+                entry.key = key
+                entry.sender = sender
+                entry.title = title
+                entry.date = date
+                entry.content = content
+            
+                self.entryArray.append(entry)
+                self.entryTableView.reloadData()
+            }
 
         }
         

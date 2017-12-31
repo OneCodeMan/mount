@@ -23,7 +23,6 @@ class EditEntryViewController: UIViewController {
 
         titleTextField.text = entryTitle ?? ""
         contentTextField.text = content ?? ""
-        print("content: \(content)")
         print(dbURL)
         
     }
@@ -37,6 +36,16 @@ class EditEntryViewController: UIViewController {
             "EntryTitle": newTitle,
             "EntryBody": newContent
         ])
+        
+        dbURL.observe(.value) { (snapshot) in
+            let snapshotValue = snapshot.value as! Dictionary<String, String>
+            let username = snapshotValue["Sender"]!
+            print("saved as \(username)")
+            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "FeedView") as? FeedViewController {
+                vc.username = username
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
         
     }
     
