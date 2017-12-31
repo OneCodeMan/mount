@@ -32,7 +32,10 @@ class LoginViewController: UIViewController {
             } else {
                 print("Log in successful")
                 
-                self.performSegue(withIdentifier: "goToFeed", sender: self)
+                if let vc = self.storyboard?.instantiateViewController(withIdentifier: "FeedView") as? FeedViewController {
+                    vc.username = username
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
             }
             
         }

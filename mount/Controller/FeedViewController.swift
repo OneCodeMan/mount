@@ -14,6 +14,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var entryArray: [Entry] = [Entry]()
     var keyArray: [String] = [String]()
+    var username: String?
     
     @IBOutlet weak var entryTableView: UITableView!
     
@@ -64,12 +65,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             entryArray.remove(at: indexPath.row)
             entryTableView.deleteRows(at: [indexPath], with: .fade)
         
-
         }
     }
     
     func fetchEntries() {
         
+        // use filter method here
         let entriesDB = Database.database().reference().child("Entries")
         
         entriesDB.observe(.childAdded) { (snapshot) in
@@ -119,10 +120,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             print("error, problem signing out")
         }
         
-        guard (navigationController?.popToRootViewController(animated: true)) != nil else {
-            print("No view controllers to pop off")
-            return
-        }
+//        guard (navigationController?.popToRootViewController(animated: true)) != nil else {
+//            print("No view controllers to pop off")
+//            return
+//        }
     }
     
     /*
