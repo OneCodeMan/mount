@@ -22,10 +22,10 @@ class RegisterViewController: UIViewController {
 
     @IBAction func registerPressed(_ sender: Any) {
         
-        let userName = usernameTextField.text ?? ""
+        let username = usernameTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         
-        Auth.auth().createUser(withEmail: userName, password: password) {
+        Auth.auth().createUser(withEmail: username, password: password) {
             (user, error) in
             
             if error != nil {
@@ -33,7 +33,10 @@ class RegisterViewController: UIViewController {
             } else {
                 print("Registration complete")
                 
-                self.performSegue(withIdentifier: "goToFeed", sender: self)
+                if let vc = self.storyboard?.instantiateViewController(withIdentifier: "FeedView") as? FeedViewController {
+                    vc.username = username
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
             }
         }
     }

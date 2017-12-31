@@ -14,6 +14,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var entryArray: [Entry] = [Entry]()
     var keyArray: [String] = [String]()
+    var username: String?
     
     @IBOutlet weak var entryTableView: UITableView!
     
@@ -23,6 +24,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         entryTableView.delegate = self
         entryTableView.dataSource = self
         
+        print("logged in as \(username)")
         fetchEntries()
     }
     
@@ -64,7 +66,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             entryArray.remove(at: indexPath.row)
             entryTableView.deleteRows(at: [indexPath], with: .fade)
         
-
         }
     }
     
@@ -75,22 +76,24 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         entriesDB.observe(.childAdded) { (snapshot) in
             
             let snapshotValue = snapshot.value as! Dictionary<String, String>
-            
-            let key = snapshotValue["EntryKey"]!
             let sender = snapshotValue["Sender"]!
-            let title = snapshotValue["EntryTitle"]!
-            let content = snapshotValue["EntryBody"]!
-            let date = snapshotValue["EntryDate"]!
             
-            let entry = Entry()
-            entry.key = key
-            entry.sender = sender
-            entry.title = title
-            entry.date = date
-            entry.content = content
+            if (sender == self.username!) {
+                let key = snapshotValue["EntryKey"]!
+                let title = snapshotValue["EntryTitle"]!
+                let content = snapshotValue["EntryBody"]!
+                let date = snapshotValue["EntryDate"]!
             
-            self.entryArray.append(entry)
-            self.entryTableView.reloadData()
+                let entry = Entry()
+                entry.key = key
+                entry.sender = sender
+                entry.title = title
+                entry.date = date
+                entry.content = content
+            
+                self.entryArray.append(entry)
+                self.entryTableView.reloadData()
+            }
 
         }
         
@@ -119,20 +122,18 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             print("error, problem signing out")
         }
         
-        guard (navigationController?.popToRootViewController(animated: true)) != nil else {
-            print("No view controllers to pop off")
-            return
+//        guard (navigationController?.popToRootViewController(animated: true)) != nil else {
+//            print("No view controllers to pop off")
+//            return
+//        }
+    }
+    
+    @IBAction func addEntry(_ sender: Any) {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddEntry") as? AddEntryViewController {
+            vc.username = username
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
