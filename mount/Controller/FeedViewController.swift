@@ -128,14 +128,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 //        }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func addEntry(_ sender: Any) {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddEntry") as? AddEntryViewController {
+            vc.username = username
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
-    */
+    
 
 }

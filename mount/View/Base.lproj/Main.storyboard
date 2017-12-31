@@ -163,7 +163,7 @@
                     <navigationItem key="navigationItem" title="Feed" id="INB-dy-jk6">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="snM-5h-jHf">
                             <connections>
-                                <segue destination="wyX-v6-Wnt" kind="show" identifier="goToAddEntry" id="U3p-H4-mqK"/>
+                                <action selector="addEntry:" destination="0Oi-FN-T2O" id="g70-wy-Zfw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -326,31 +326,31 @@
         <!--Add Entry-->
         <scene sceneID="4zE-n0-Utg">
             <objects>
-                <viewController title="Add Entry" id="wyX-v6-Wnt" customClass="AddEntryViewController" customModule="mount" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddEntry" title="Add Entry" id="wyX-v6-Wnt" customClass="AddEntryViewController" customModule="mount" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ot4-L5-6h4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Epm-f5-46R">
-                                <rect key="frame" x="15" y="109" width="345" height="30"/>
+                                <rect key="frame" x="15" y="65" width="345" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFh-zJ-m5E">
-                                <rect key="frame" x="15" y="80" width="43" height="27.5"/>
+                                <rect key="frame" x="15" y="36" width="43" height="27.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4C-FD-yCR">
-                                <rect key="frame" x="15" y="147" width="80" height="28"/>
+                                <rect key="frame" x="15" y="103" width="80" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Rockin' open mics" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8WK-xj-mRU">
-                                <rect key="frame" x="15" y="183" width="345" height="230"/>
+                                <rect key="frame" x="15" y="139" width="345" height="230"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="230" id="s6x-ZD-6q3"/>
@@ -359,7 +359,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QI0-qn-E9Y">
-                                <rect key="frame" x="5" y="450" width="365" height="80"/>
+                                <rect key="frame" x="5" y="406" width="365" height="80"/>
                                 <color key="backgroundColor" red="0.82687126989389914" green="0.82645877103432019" blue="0.78095113916574488" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="qBa-a3-yZ9"/>

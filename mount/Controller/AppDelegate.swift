@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
-        // let myDatabase = Database.database().reference()
-        // myDatabase.setValue("resetted")
+        let myDatabase = Database.database().reference()
+        myDatabase.setValue("")
         
         return true
     }

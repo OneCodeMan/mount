@@ -14,6 +14,7 @@ class AddEntryViewController: UIViewController {
 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var contentTextField: UITextView!
+    var username: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
