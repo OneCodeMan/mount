@@ -25,6 +25,12 @@ class EditEntryViewController: UIViewController {
         contentTextField.text = content ?? ""
         print(dbURL)
         
+        let keyboardDownGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        self.view.addGestureRecognizer(keyboardDownGestureRecognizer)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 
     @IBAction func saveEntry(_ sender: Any) {
