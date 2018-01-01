@@ -28,7 +28,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         fetchEntries()
     }
     
-    // Mark: - TableView DataSource methods
+    // Mark: - UITableView methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return entryArray.count
@@ -69,6 +69,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         }
     }
+    
+    // MARK - DB methods
     
     func fetchEntries() {
         
@@ -113,6 +115,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         })
     }
+    
+    // MARK - UI behaviour
     
     @IBAction func logoutPressed(_ sender: Any) {
        
