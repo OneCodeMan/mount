@@ -33,7 +33,7 @@ class EntryDetailViewController: UIViewController {
         let entriesDB = Database.database().reference().child("Entries")
         
         dbURL = entriesDB.child(dbKey!)
-        print(dbURL)
+//        print(dbURL)
     }
 
     @IBAction func editPressed(_ sender: Any) {
