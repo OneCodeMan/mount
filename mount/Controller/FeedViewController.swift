@@ -37,7 +37,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = entryTableView.dequeueReusableCell(withIdentifier: "EntryCell", for: indexPath)
         
-        cell.textLabel?.text = entryArray[indexPath.row].title
+        let cellTitle = entryArray[indexPath.row].title
+        cell.textLabel?.text = cellTitle != "" ? cellTitle : "untitled"
         
         return cell
     }

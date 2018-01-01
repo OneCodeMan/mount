@@ -26,7 +26,7 @@ class EntryDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        entryTitle.text = titleString ?? "no title available"
+        entryTitle.text = titleString != "" ? titleString : "untitled"
         entryContent.text = content ?? "no content available"
         entryDate.text = date ?? "no date"
         
