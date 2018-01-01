@@ -117,7 +117,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
        
         do {
             try Auth.auth().signOut()
-            navigationController?.popToRootViewController(animated: true)
+            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "WelcomeView") as? WelcomeViewController {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         } catch {
             print("error, problem signing out")
         }

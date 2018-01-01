@@ -20,7 +20,7 @@
         <!--Mount-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Mount" id="BYZ-38-t0r" customClass="ViewController" customModule="mount" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeView" title="Mount" id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="mount" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
