@@ -19,7 +19,7 @@ class EntryDetailViewController: UIViewController {
     
     @IBOutlet weak var entryTitle: UILabel!
     @IBOutlet weak var entryDate: UILabel!
-    @IBOutlet weak var entryContent: UILabel!
+    @IBOutlet weak var entryContent: UITextView!
     
     var dbURL: DatabaseReference?
     
