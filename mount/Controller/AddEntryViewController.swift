@@ -50,7 +50,7 @@ class AddEntryViewController: UIViewController {
             (error, reference) in
             
             if error != nil {
-                print(error)
+                //print(error)
             } else {
                 if let vc = self.storyboard?.instantiateViewController(withIdentifier: "FeedView") as? FeedViewController {
                     vc.username = username
