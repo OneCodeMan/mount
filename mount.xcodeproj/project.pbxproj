@@ -14,7 +14,7 @@
 		1666BFD61FF64B92005C3EA8 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1666BFD51FF64B92005C3EA8 /* EntryDetailViewController.swift */; };
 		1666BFD81FF752B4005C3EA8 /* EditEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1666BFD71FF752B4005C3EA8 /* EditEntryViewController.swift */; };
 		16FAE5021FF58C7300685642 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAE5011FF58C7300685642 /* AppDelegate.swift */; };
-		16FAE5041FF58C7300685642 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAE5031FF58C7300685642 /* ViewController.swift */; };
+		16FAE5041FF58C7300685642 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAE5031FF58C7300685642 /* WelcomeViewController.swift */; };
 		16FAE5071FF58C7400685642 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16FAE5051FF58C7400685642 /* Main.storyboard */; };
 		16FAE5091FF58C7400685642 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16FAE5081FF58C7400685642 /* Assets.xcassets */; };
 		16FAE50C1FF58C7400685642 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16FAE50A1FF58C7400685642 /* LaunchScreen.storyboard */; };
@@ -34,7 +34,7 @@
 		1666BFD71FF752B4005C3EA8 /* EditEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEntryViewController.swift; sourceTree = "<group>"; };
 		16FAE4FE1FF58C7300685642 /* mount.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mount.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16FAE5011FF58C7300685642 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		16FAE5031FF58C7300685642 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		16FAE5031FF58C7300685642 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		16FAE5061FF58C7400685642 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		16FAE5081FF58C7400685642 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16FAE50B1FF58C7400685642 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				16FAE5011FF58C7300685642 /* AppDelegate.swift */,
-				16FAE5031FF58C7300685642 /* ViewController.swift */,
+				16FAE5031FF58C7300685642 /* WelcomeViewController.swift */,
 				1666BFCD1FF5CD4D005C3EA8 /* LoginViewController.swift */,
 				1666BFCF1FF5CD57005C3EA8 /* RegisterViewController.swift */,
 				1666BFD11FF5D1E4005C3EA8 /* FeedViewController.swift */,
@@ -277,7 +277,7 @@
 				16FAE51C1FF5979B00685642 /* Entry.swift in Sources */,
 				1666BFD41FF64531005C3EA8 /* AddEntryViewController.swift in Sources */,
 				1666BFD81FF752B4005C3EA8 /* EditEntryViewController.swift in Sources */,
-				16FAE5041FF58C7300685642 /* ViewController.swift in Sources */,
+				16FAE5041FF58C7300685642 /* WelcomeViewController.swift in Sources */,
 				1666BFD21FF5D1E4005C3EA8 /* FeedViewController.swift in Sources */,
 				1666BFD61FF64B92005C3EA8 /* EntryDetailViewController.swift in Sources */,
 				16FAE5021FF58C7300685642 /* AppDelegate.swift in Sources */,
