@@ -142,6 +142,7 @@
                     </view>
                     <connections>
                         <outlet property="passwordTextField" destination="Rmv-Gv-jU5" id="1pT-pJ-Wgl"/>
+                        <outlet property="registerButton" destination="c4u-wP-heK" id="oKA-DH-I03"/>
                         <outlet property="usernameTextField" destination="zI6-BS-vaj" id="S6y-Td-M7k"/>
                     </connections>
                 </viewController>
@@ -596,6 +597,7 @@
                         <viewLayoutGuide key="safeArea" id="MIY-Ic-hd6"/>
                     </view>
                     <connections>
+                        <outlet property="loginButton" destination="fRR-lP-ANa" id="oGC-TG-3eR"/>
                         <outlet property="passwordTextField" destination="tXB-H7-48X" id="HZ3-Ot-RXx"/>
                         <outlet property="usernameTextField" destination="l5h-BK-Ax1" id="rng-0V-WOj"/>
                     </connections>
