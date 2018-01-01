@@ -24,7 +24,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         entryTableView.delegate = self
         entryTableView.dataSource = self
         
-        print("logged in as \(username)")
+//        print("logged in as \(username)")
         fetchEntries()
     }
     

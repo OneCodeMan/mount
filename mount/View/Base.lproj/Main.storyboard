@@ -337,7 +337,7 @@
                                 </variation>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSy-z3-HTu">
-                                <rect key="frame" x="19.999999999999996" y="40" width="38.666666666666657" height="24.666666666666671"/>
+                                <rect key="frame" x="14.999999999999996" y="40" width="38.666666666666657" height="24.666666666666671"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -418,6 +418,7 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="aV4-uR-LFh"/>
+                                <exclude reference="449-G4-bRY"/>
                                 <exclude reference="Pgh-yj-6g8"/>
                                 <exclude reference="Cke-ZG-TDV"/>
                                 <exclude reference="QRo-Fr-JBx"/>
