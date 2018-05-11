@@ -20,7 +20,7 @@ class EditEntryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         titleTextField.text = entryTitle ?? ""
         contentTextField.text = content ?? ""
         print(dbURL)
